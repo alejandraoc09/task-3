@@ -13,7 +13,7 @@ pacman :: p_load(readxl,haven,dplyr,plyr,data.table,sf,tidyverse,skimr,
                  arm,rockchalk,plyr,XML,rvest,xml2)
  
 #Configurar el WorkSpace
-setwd("C:\\Users\\USER\\Desktop\\Trabajo\\Andes\\Alejandra\\Taller de R\\task-3")
+setwd("C:\\Users\\User\\Desktop\\Task 3")
 getwd() #Verificamos la ruta de trabajo
 
 #---------------------------------Taller A---------------------------------------
@@ -24,7 +24,7 @@ getwd() #Verificamos la ruta de trabajo
 
 #Cargamos las vias
 via <- st_read("data\\input\\VIAS.shp")
-#Cargamos servicion publico
+#Cargamos los servicios publicos
 puntos <- st_read("data\\input\\MGN_URB_TOPONIMIA.shp")
 
 ###1.1.2
@@ -216,7 +216,7 @@ Mapa_1 <- ggplot() +
 
 Mapa_1 #Observamos el mapa
 
-#Guardamos en mapa en extension pdf
+#Guardamos el mapa en extension pdf
 ggsave(filename = "./views/Mapa 1.pdf",
        plot = Mapa_1,
        width = 20,
@@ -259,7 +259,7 @@ dev.off()
 Logit <- glm(formula = Formula_1,data = df_mapmuse, family = binomial(link = "logit")) 
 Logit %>% summary()
 
-#Estimamos y obervamos el modelo Probir
+#Estimamos y obervamos el modelo Probit
 Probit <- glm(formula = Formula_1,data = df_mapmuse, family = binomial(link = "probit")) 
 Probit %>% summary()
 
